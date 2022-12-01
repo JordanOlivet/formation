@@ -13,18 +13,5 @@ class RoverController(val roverAdapter: RoverAdapter) {
         val roverView = roverAdapter.getRover()
         return ResponseEntity.ok(roverView)
     }
-
-}
-
-data class RoverView(val x: Int, val y: Int, val direction: String) {
-    companion object {
-        fun from(rover: Rover): RoverView {
-            return RoverView(
-                x = rover.position.x,
-                y = rover.position.y,
-                direction = rover.direction.name
-            )
-        }
-    }
 }
 
