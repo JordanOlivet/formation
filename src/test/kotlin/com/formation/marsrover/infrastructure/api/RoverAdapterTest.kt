@@ -7,11 +7,8 @@ import com.formation.marsrover.domain.RoverQuery
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
-import io.mockk.verify
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import org.springframework.boot.test.mock.mockito.MockBean
 
 internal class RoverAdapterTest {
 
@@ -23,12 +20,13 @@ internal class RoverAdapterTest {
 
     @Test
     fun `should find a rover`() {
-        val rover = Rover(Position(0,0),Direction.N)
-        every {roverQuery.find()} returns rover
+        val rover = Rover(Position(0, 0), Direction.N)
+
+        every { roverQuery.find() } returns rover
 
         val roverView = roverAdapter.getRover()
 
-        assertThat (roverView).isEqualTo(rover)
+        assertThat(roverView).isEqualTo(rover)
 
     }
 }
