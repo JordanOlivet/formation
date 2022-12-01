@@ -1,4 +1,4 @@
-package com.formation.marsrover.rover
+package com.formation.marsrover.domain.rover
 
 import com.formation.marsrover.domain.Command
 import com.formation.marsrover.domain.Direction.*
